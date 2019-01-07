@@ -1,3 +1,15 @@
+@keyframes bannerAnim {
+  0% {
+    right: 0; }
+  100% {
+    right: -250%; } }
+
+@keyframes buttonAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +28,17 @@
   top: 35%;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
+  .banner::after {
+    content: "";
+    width: 250%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #000, #000);
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: bannerAnim 3s linear forwards; }
   .banner h1 {
     color: #91130f;
     font-family: "Ubuntu", sans-serif;
@@ -37,4 +59,5 @@
     border-radius: 10rem;
     transform: perspective(50rem) rotateY(-15deg);
     text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
-    cursor: pointer; }
+    cursor: pointer;
+    animation: buttonAnim 1s 2.5s backwards; }

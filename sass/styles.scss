@@ -1,3 +1,5 @@
+@import "_keyframes.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +22,18 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        width: 250%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, #000, #000);
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: bannerAnim 3s linear forwards;
+    }
 
     h1 {
         color: #91130f;
@@ -44,5 +58,6 @@
         transform: perspective(50rem) rotateY(-15deg);
         text-shadow: .6rem .3rem .2rem rgba(0, 0, 0, .4);
         cursor: pointer;
+        animation: buttonAnim 1s 2.5s backwards;
     }
 }
