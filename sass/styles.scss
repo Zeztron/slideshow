@@ -59,5 +59,29 @@
         text-shadow: .6rem .3rem .2rem rgba(0, 0, 0, .4);
         cursor: pointer;
         animation: buttonAnim 1s 2.5s backwards;
+        transition: all .5s;
+        overflow: hidden;
+
+        &:hover {
+            transform: perspective(50rem) rotateY(15deg);
+            text-shadow: -.6rem .3rem .2rem rgba(0, 0, 0, .4);
+            background: linear-gradient(to left, #440402, #c0120c);
+
+            &::before {
+                left: 100%;
+            }
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, #fff, transparent);
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transform: skewX(-30deg);
+            transition: left .5s;
+        }
     }
 }
